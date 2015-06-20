@@ -9,7 +9,7 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "2.3.*",
+        "symfony/symfony": "~2.3",
         "doctrine/orm": "~2.2,>=2.2.3,<2.5",
         "doctrine/dbal": "<2.5",
         "doctrine/doctrine-bundle": "~1.2",
@@ -20,7 +20,11 @@
         "sensio/distribution-bundle": "~2.3",
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
         "sensio/generator-bundle": "~2.3",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "php-database-migration/php-database-migration" :"3.4.*",
+        "gedmo/doctrine-extensions": "2.4.1",
+        "doctrine/doctrine-fixtures-bundle": "^2.2",
+        "friendsofsymfony/jsrouting-bundle": "^1.5"
     },
     "scripts": {
         "post-install-cmd": [

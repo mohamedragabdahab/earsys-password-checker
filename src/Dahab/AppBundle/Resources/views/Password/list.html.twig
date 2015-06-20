@@ -1,0 +1,26 @@
+{% extends "DahabAppBundle::layout.html.twig" %}
+{% block head %}
+    {{ parent() }}
+    <script  src="{{ asset('bundles/dahabapp/js/password.js') }}" ></script>
+{% endblock %}
+
+{% block title "Symfony - Password" %}
+
+    {% block content %}
+        <table>
+            <th>Password</th>
+            <th>Validity</th>
+            <th>Status</th>
+                {% for password in passwords %}
+                    {% set status = 'invalid' %}
+                    {% if password.getValid() == 1 %}
+                        {% set status = 'valid' %}
+                    {% endif %}
+                <tr>
+                    <td>{{ password.getPassword() }}</td>
+                    <td><a class="passwordCheck" href="#" data-password="{{ password.getPassword() }}">check</a></td>
+                    <td><span class="message">{{ status }}<span></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endblock %}

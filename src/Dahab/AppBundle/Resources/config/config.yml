@@ -1,0 +1,20 @@
+parameters:
+    passwordRules:
+            rule_1:
+                regex: '/[A-Za-z0-9#,.\-_]{5,}/'
+                err_msg: 'Password length is minimum 5 characters'
+                include: true
+            rule_2:
+                regex: '/\d/'
+                err_msg: 'At least one number is used in the password'
+                include: true
+            rule_3:
+                regex: '/[A-Z]|[@#$%^&+=]/'
+                err_msg: 'There is at least one uppercase character OR alternatively one special character'
+                include: true
+            rule_4:
+                regex: '/(\w)\1{2}/'
+                err_msg: 'Repeating 3 or more characters not allowed, only 2 are allowed' 
+                include: false
+        
+    
