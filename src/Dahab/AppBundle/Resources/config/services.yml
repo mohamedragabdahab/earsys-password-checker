@@ -1,4 +1,0 @@
-services:
-    dahab.app.PasswordService:
-        class: Dahab\AppBundle\Services\PasswordService
-        arguments: ["%passwordRules%", "@doctrine.orm.entity_manager"]

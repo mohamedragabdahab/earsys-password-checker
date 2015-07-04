@@ -24,7 +24,8 @@
         "php-database-migration/php-database-migration" :"3.4.*",
         "gedmo/doctrine-extensions": "2.4.1",
         "doctrine/doctrine-fixtures-bundle": "^2.2",
-        "friendsofsymfony/jsrouting-bundle": "^1.5"
+        "friendsofsymfony/jsrouting-bundle": "^1.5",
+        "pdepend/pdepend": "^2.1"
     },
     "scripts": {
         "post-install-cmd": [
