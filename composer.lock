@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cd4a7caabbbcd182c4d42d26e3134214",
+    "hash": "c96dd652560260d5841c79e2e1b76b16",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1233,6 +1233,54 @@
                 "minification"
             ],
             "time": "2014-12-12 05:04:05"
+        },
+        {
+            "name": "lexik/currency-bundle",
+            "version": "v1.2.4",
+            "target-dir": "Lexik/Bundle/CurrencyBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lexik/LexikCurrencyBundle.git",
+                "reference": "40dfd0ec8347f51a24d6c9c1bd45fba6ca591599"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lexik/LexikCurrencyBundle/zipball/40dfd0ec8347f51a24d6c9c1bd45fba6ca591599",
+                "reference": "40dfd0ec8347f51a24d6c9c1bd45fba6ca591599",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "~2.1"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Lexik\\Bundle\\CurrencyBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dev Lexik",
+                    "email": "dev@lexik.fr"
+                },
+                {
+                    "name": "Cedric Girard",
+                    "email": "c.girard@lexik.fr"
+                }
+            ],
+            "description": "This Symfony2 bundle provide a service and a Twig extension to convert and display currencies.",
+            "homepage": "https://github.com/lexik/LexikCurrencyBundle",
+            "keywords": [
+                "Symfony2",
+                "bundle",
+                "currency"
+            ],
+            "time": "2015-05-29 12:47:38"
         },
         {
             "name": "monolog/monolog",

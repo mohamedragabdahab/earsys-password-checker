@@ -46,7 +46,6 @@ doctrine:
         host:     "%database_host%"
         port:     "%database_port%"
         dbname:   "%database_name%"
-        path:     "%database_path%"
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
@@ -68,3 +67,13 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+lexik_currency:
+    currencies:
+        default: GBP              
+        managed: [GBP, EUR, USD]
+    decimal_part:
+        precision:  2
+        round_mode: up
+    currency_class: Lexik\Bundle\CurrencyBundle\Entity\Currency
+    default_adapter: doctrine_currency_adapter

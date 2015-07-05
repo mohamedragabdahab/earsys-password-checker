@@ -7,9 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Orders
  *
- * @ORM\Table(name="orders")
+ * @ORM\Table(name="orders", indexes={@ORM\Index(name="merchant_id", columns={"merchant_id"})})
  * @ORM\Entity(repositoryClass="Zanox\AppBundle\Entity\OrdersRepository")
- * 
  */
 class Orders
 {
@@ -25,30 +24,42 @@ class Orders
     /**
      * @var float
      *
-     * @ORM\Column(name="amount", type="float", precision=10, scale=0, nullable=true)
+     * @ORM\Column(name="amount", type="float", precision=10, scale=0, nullable=false)
      */
     private $amount;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="currency", type="string", length=4, nullable=true)
+     * @ORM\Column(name="currency_code", type="string", length=5, nullable=false)
      */
-    private $currency;
+    private $currencyCode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="currency_symbol", type="string", length=20, nullable=false)
+     */
+    private $currencySymbol;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date", type="date", nullable=true)
+     * @ORM\Column(name="date", type="date", nullable=false)
      */
     private $date;
 
     /**
-     * @var integer
-     *
+     * @var \Merchants
+     * 
      * @ORM\Column(name="merchant_id", type="integer", nullable=false)
+     * 
+     * @ORM\ManyToOne(targetEntity="Zanox\AppBundle\Entity\Merchants")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="merchant", referencedColumnName="id")
+     * })
      */
-    private $merchantId;
+    private $merchant;
 
 
 
@@ -86,26 +97,49 @@ class Orders
     }
 
     /**
-     * Set currency
+     * Set currencyCode
      *
-     * @param string $currency
+     * @param string $currencyCode
      * @return Orders
      */
-    public function setCurrency($currency)
+    public function setCurrencyCode($currencyCode)
     {
-        $this->currency = $currency;
+        $this->currencyCode = $currencyCode;
 
         return $this;
     }
 
     /**
-     * Get currency
+     * Get currencyCode
      *
      * @return string 
      */
-    public function getCurrency()
+    public function getCurrencyCode()
     {
-        return $this->currency;
+        return $this->currencyCode;
+    }
+
+    /**
+     * Set currencySymbol
+     *
+     * @param string $currencySymbol
+     * @return Orders
+     */
+    public function setCurrencySymbol($currencySymbol)
+    {
+        $this->currencySymbol = $currencySymbol;
+
+        return $this;
+    }
+
+    /**
+     * Get currencySymbol
+     *
+     * @return string 
+     */
+    public function getCurrencySymbol()
+    {
+        return $this->currencySymbol;
     }
 
     /**
@@ -132,25 +166,25 @@ class Orders
     }
 
     /**
-     * Set merchantId
+     * Set merchant
      *
-     * @param integer $merchantId
+     * @param \Zanox\AppBundle\Entity\Merchants $merchant
      * @return Orders
      */
-    public function setMerchantId($merchantId)
+    public function setMerchant($merchant)
     {
-        $this->merchantId = $merchantId;
+        $this->merchant = $merchant;
 
         return $this;
     }
 
     /**
-     * Get merchantId
+     * Get merchant
      *
-     * @return integer 
+     * @return \Zanox\AppBundle\Entity\Merchants 
      */
-    public function getMerchantId()
+    public function getMerchant()
     {
-        return $this->merchantId;
+        return $this->merchant;
     }
 }

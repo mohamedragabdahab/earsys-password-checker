@@ -57,16 +57,13 @@ class OrderService {
         
         //select from merchant by ID
         $merchant = $this->_em->getRepository('ZanoxAppBundle:Merchants')->findOneBy(['id' => $id]);
-
         //Check if merchant exists
         if(empty($merchant)){
             throw new Exception('Merchant not found');
         }
-        
         $reportsRepo = $this->_em->getRepository('ZanoxAppBundle:Orders');
 
-        $orders = $reportsRepo->findBy(['merchantId' => $id]);
-        
+        $orders = $reportsRepo->findBy(['merchant' => $id]);
         
         return $orders;
     }

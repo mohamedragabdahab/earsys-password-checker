@@ -16,7 +16,8 @@ class AppKernel extends Kernel {
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
-            new Zanox\AppBundle\ZanoxAppBundle()
+            new Zanox\AppBundle\ZanoxAppBundle(),
+            new Lexik\Bundle\CurrencyBundle\LexikCurrencyBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
