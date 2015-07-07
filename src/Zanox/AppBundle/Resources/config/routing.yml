@@ -1,3 +1,0 @@
-zanox_merchant_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: ZanoxAppBundle:Default:index }

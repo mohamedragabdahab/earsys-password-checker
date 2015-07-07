@@ -4,11 +4,21 @@ namespace Zanox\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
-use Exception;
 
 /**
+ * Report Controller responsable for presenting Merchant's transaction reports
  * 
- * @author Mohamed Ragab Dahab <mdahab@treze.co.uk>
+ * @category    Controller
+ * @package     AppBundle
+ * @author      Mohamed Ragab Dahab <eng.mohamed.dahab@gmail.com>
+ * @version     1.0
+ * @link        http://zanox.com/
+ * @since       Class available since Release 1.0
+ * 
+ * @copyright
+ * Zanox Affiliate Window Candidate Task 1.0
+ * Copyright © 2015 by Zanox
+ * http://www.zanox.com
  * 
  * @Route("merchant")
  * 
@@ -16,18 +26,16 @@ use Exception;
 class ReportController extends Controller {
 
     /**
-     * 
-     * @author Mohamed Ragab Dahab <mdahab@treze.co.uk>
+     * Show transaction report regarding to the given merchant ID
+     * @author Mohamed Ragab Dahab <eng.mohamed.dahab@gmail.com>
      * @access public
      * 
      * @Route("/{id}/report", name="merchant-report")
      * 
-     * @param int $id
-     * @return type
+     * @param int $id   Merchant ID
      */
     public function showAction($id) {
         try {
-
             //Order Service
             $orderService = $this->get('zanox_app.orderService');
 
@@ -36,7 +44,7 @@ class ReportController extends Controller {
 
             //render view and pass orders array
             return $this->render('ZanoxAppBundle:Report:show.html.twig', ['orders' => $orders]);
-        } catch (Exception $e) {
+        } catch (\Exception $ex) {
             //log errors
         }
     }

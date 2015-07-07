@@ -25,7 +25,10 @@
         "gedmo/doctrine-extensions": "2.4.1",
         "doctrine/doctrine-fixtures-bundle": "^2.2",
         "friendsofsymfony/jsrouting-bundle": "^1.5",
-        "lexik/currency-bundle": "^1.2"
+        "lexik/currency-bundle": "^1.2",
+        "raulfraile/ladybug": "^1.0",
+        "smart-core/ladybug-bundle": "^1.0",
+        "fzaninotto/faker": "^1.5"
     },
     "scripts": {
         "post-install-cmd": [

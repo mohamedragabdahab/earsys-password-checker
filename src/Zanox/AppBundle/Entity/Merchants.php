@@ -5,13 +5,26 @@ namespace Zanox\AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Merchants
+ * Merchants Entity Class
+ * 
+ * @category    Entity
+ * @package     AppBundle
+ * @author      Mohamed Ragab Dahab <eng.mohamed.dahab@gmail.com>
+ * @version     1.0
+ * @link        http://zanox.com/
+ * @since       Class available since Release 1.0
+ * 
+ * @copyright
+ * Zanox Affiliate Window Candidate Task 1.0
+ * Copyright © 2015 by Zanox
+ * http://www.zanox.com
+ * 
  *
  * @ORM\Table(name="merchants")
- * @ORM\Entity(repositoryClass="Zanox\AppBundle\Entity\MerchantsRepository")
+ * @ORM\Entity
  */
-class Merchants
-{
+class Merchants {
+
     /**
      * @var integer
      *
@@ -28,26 +41,24 @@ class Merchants
      */
     private $name;
 
-
-
     /**
      * Get id
-     *
+     * @author Mohamed Ragab Dahab <eng.mohamed.dahab@gmail.com>
+     * 
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
     /**
      * Set name
-     *
+     * @author Mohamed Ragab Dahab <eng.mohamed.dahab@gmail.com>
      * @param string $name
+     * 
      * @return Merchants
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -55,11 +66,12 @@ class Merchants
 
     /**
      * Get name
-     *
+     * @author Mohamed Ragab Dahab <eng.mohamed.dahab@gmail.com>
+     * 
      * @return string 
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
+
 }
